@@ -18,9 +18,32 @@ require '../vendor/autoload.php';
  */
 
 
+// Create new Plates instance
+$templates = new League\Plates\Engine('../app/views');
+
+// Render a template
+echo $templates->render('about', ['title' => 'Jonathan']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if($_SERVER['REQUEST_URI']=='/php/public/home')
 {
     require '../app/controllers/homepage.php';
 }
 
-exit;
+
+
+
+

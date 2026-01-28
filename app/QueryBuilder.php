@@ -28,17 +28,7 @@ class QueryBuilder
         var_dump($result);
     }
 
-    public function findOne($data, $table)
-    {
-        $select = $this->queryFactory->newSelect();
-        $select->cols([
-            'title' => $data,
-        ])
-        ->from($table)           // table name
-        ->where("title LIKE :$data");
-        $sth = $this->pdo->prepare($select->getStatement());
-        $sth->execute($select->getBindValues());
-    }
+
 
     public function insert($data, $table)
     {
