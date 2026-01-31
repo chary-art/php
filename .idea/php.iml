@@ -7,6 +7,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/aura/sqlquery" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/plates" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kint-php/kint" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/fast-route" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/tamtamchik/simple-flash" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

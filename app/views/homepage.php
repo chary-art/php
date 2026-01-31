@@ -17,9 +17,10 @@ $db->update([
 $db->delete( 20, 'posts' );
 */
 
-$this->layout('layout', ['title' => 'User Profile'])
+//$this->layout('layout', ['title' => 'User Profile'])
 
 ?>
 
 <h1>User Profile</h1>
-<p>Hello, <?=$this->e($name)?></p>
+<!--<p>Hello, --><?php //=$this->e($name)?><!--</p>-->
+<p>Hello, </p>
