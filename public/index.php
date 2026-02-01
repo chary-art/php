@@ -27,24 +27,22 @@ use function Tamtamchik\SimpleFlash\flash;
 
 $templates = new League\Plates\Engine('../app/views');
 echo $templates->render('about', ['title' => 'Jonathan']);
- */
-
-require '../vendor/autoload.php';
-
 
 
 if($_SERVER['REQUEST_URI']=='/php/public/home')
 {
     require '../app/views/homepage.php';
 }
+ */
+
+require '../vendor/autoload.php';
+
 
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/php/public/users', 'get_all_users_handler');
+    $r->addRoute('GET', '/php/public/home', ['App\controllers\HomeController', 'index']);
+    $r->addRoute('GET', '/php/public/about', ['App\controllers\HomeController', 'about']);
     // {id} must be a number (\d+)
-    $r->addRoute('GET', '/php/public/user/{id:\d+}', 'get_user_handler');
-    // The /{title} suffix is optional
-    $r->addRoute('GET', '/php/public/articles/{id:\d+}[/{title}]', 'get_article_handler');
 });
 
 // Fetch method and URI from somewhere
@@ -59,7 +57,6 @@ $uri = rawurldecode($uri);
 
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 
-d($routeInfo);
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
         // ... 404 Not Found
@@ -73,16 +70,17 @@ switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::FOUND:
         $handler = $routeInfo[1];
         $vars = $routeInfo[2];
-        call_user_func($handler, $vars);
+        $controller = new $handler[0];
+        call_user_func([$controller, $handler[1]], $vars);
         // ... call $handler with $vars
         break;
 }
 
 
-function get_user_handler($vars)
-{
-    d($vars['id']);
-}
+//function get_user_handler($vars)
+//{
+//    d($vars['id']);
+//}
 
 
 

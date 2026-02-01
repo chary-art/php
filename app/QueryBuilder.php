@@ -24,8 +24,8 @@ class QueryBuilder
             ->from('posts');
         $sth = $this->pdo->prepare($select->getStatement());
         $sth->execute($select->getBindValues());
-        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($result);
+        return $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
     }
 
 
