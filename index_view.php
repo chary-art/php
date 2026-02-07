@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="bootstrap-5.3.8/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/bootstrap-5.3.8/css/bootstrap.min.css" rel="stylesheet">
     <title>Bootstrap demo</title>
 </head>
 <body>
@@ -44,6 +44,6 @@
     </div>
 </div>
 
-<script src="bootstrap-5.3.8/js/bootstrap.bundle.min.js"></script>
+<script src="public/bootstrap-5.3.8/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -3,7 +3,9 @@
     "aura/sqlquery": "2.8.1",
     "league/plates": "3.6.0",
     "tamtamchik/simple-flash": "^3.0",
-    "nikic/fast-route": "^1.3"
+    "nikic/fast-route": "^1.3",
+    "illuminate/support": "^12.50",
+    "delight-im/auth": "^9.0"
 
   },
   "autoload": {

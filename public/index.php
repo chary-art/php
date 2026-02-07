@@ -33,15 +33,34 @@ if($_SERVER['REQUEST_URI']=='/php/public/home')
 {
     require '../app/views/homepage.php';
 }
+
+//function get_user_handler($vars)
+//{
+//    d($vars['id']);
+//}
+
+use Illuminate\Support\Arr;
+
+$array = [
+    ['chary' => ['course' => 'HTML']],
+    ['chary' => ['course' => 'PHP']]
+];
+
+$result = Arr::pluck($array, 'chary.course');
+d($result);
+
  */
 
-require '../vendor/autoload.php';
+if(!session_id()) @session_start();
 
+require '../vendor/autoload.php';
 
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/php/public/home', ['App\controllers\HomeController', 'index']);
     $r->addRoute('GET', '/php/public/about', ['App\controllers\HomeController', 'about']);
+    $r->addRoute('GET', '/php/public/verification', ['App\controllers\HomeController', 'email_verification']);
+    $r->addRoute('GET', '/php/public/login', ['App\controllers\HomeCOntroller', 'login']);
     // {id} must be a number (\d+)
 });
 
@@ -75,14 +94,6 @@ switch ($routeInfo[0]) {
         // ... call $handler with $vars
         break;
 }
-
-
-//function get_user_handler($vars)
-//{
-//    d($vars['id']);
-//}
-
-
 
 
 
