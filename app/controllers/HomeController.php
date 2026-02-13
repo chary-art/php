@@ -6,6 +6,7 @@ use App\exceptions\AccountIsBlockedException;
 use App\exceptions\NotEnoughMoneyException;
 use App\QueryBuilder;
 use Delight\Auth\Auth;
+use Delight\Auth\Role;
 use Exception;
 use League\Plates\Engine;
 use PDO;
@@ -25,8 +26,18 @@ class HomeController
 
     public function index($vars)
     {
-//        d($this->auth->isLoggedIn());
-        d($this->auth->getUsername());
+//        $this->auth->login('myrat@gmail.com', '123');
+//        die;
+        d($this->auth->getRoles());
+        die;
+        try {
+            $auth->admin()->addRoleForUserByEmail($userEmail, \Delight\Auth\Role::ADMIN);
+        }
+        catch (\Delight\Auth\InvalidEmailException $e) {
+            die('Unknown email address');
+        }
+
+        $this->auth->getRoles();
         $db = new QueryBuilder();
         $posts = $db->getAll('posts');
         echo $this->templates->render('homepage', ['posts' => $posts]);
