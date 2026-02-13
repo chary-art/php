@@ -46,6 +46,8 @@
       <path value="$PROJECT_DIR$/vendor/delight-im/http" />
       <path value="$PROJECT_DIR$/vendor/delight-im/otp" />
       <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/vendor/eoghanobrien/php-simple-mail" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />

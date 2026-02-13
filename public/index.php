@@ -49,11 +49,47 @@ $array = [
 $result = Arr::pluck($array, 'chary.course');
 d($result);
 
+//$mailer = new SimpleMail();
+//var_dump($mailer);
+
+var_dump(SimpleMail::make()
+    ->setTo('charymwell@gmail.com', 'Charym')
+    ->setFrom('info@example.com', 'Admin')
+    ->setSubject('Offigenskaya tema')
+    ->setMessage('Privet kak dela')
+    ->send());
+
  */
 
 if(!session_id()) @session_start();
 
 require '../vendor/autoload.php';
+
+
+
+$faker = Faker\Factory::create();
+
+$pdo = new PDO('mysql:host=localhost;dbname=app3', 'root', '');
+$queryFactory = new \Aura\SqlQuery\QueryFactory('mysql');
+
+$insert = $queryFactory->newInsert();
+
+//$insert->into('posts');
+//for($i=0; $i < 30; $i++)
+//{
+//    $insert->cols([
+//       'title' => $faker->words(3, true),
+//        'content' => $faker->text,
+//    ]);
+//    $insert->addRow();
+//}
+//
+//$sth = $pdo->prepare($insert->getStatement());
+//$sth = execute($insert->getBindValues());
+
+
+
+
 
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
@@ -63,6 +99,14 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->addRoute('GET', '/php/public/login', ['App\controllers\HomeCOntroller', 'login']);
     // {id} must be a number (\d+)
 });
+
+
+
+
+
+
+
+
 
 // Fetch method and URI from somewhere
 $httpMethod = $_SERVER['REQUEST_METHOD'];

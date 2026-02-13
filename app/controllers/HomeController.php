@@ -28,14 +28,13 @@ class HomeController
     {
 //        $this->auth->login('myrat@gmail.com', '123');
 //        die;
-        d($this->auth->getRoles());
-        die;
-        try {
-            $auth->admin()->addRoleForUserByEmail($userEmail, \Delight\Auth\Role::ADMIN);
-        }
-        catch (\Delight\Auth\InvalidEmailException $e) {
-            die('Unknown email address');
-        }
+//        d($this->auth->getRoles());
+//        try {
+//            $auth->admin()->addRoleForUserByEmail($userEmail, \Delight\Auth\Role::ADMIN);
+//        }
+//        catch (\Delight\Auth\InvalidEmailException $e) {
+//            die('Unknown email address');
+//        }
 
         $this->auth->getRoles();
         $db = new QueryBuilder();
@@ -136,4 +135,6 @@ class HomeController
             die('Too many requests');
         }
     }
+
+
 }

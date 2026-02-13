@@ -66,6 +66,7 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         'F' => 
         array (
             'FastRoute\\' => 10,
+            'Faker\\' => 6,
         ),
         'D' => 
         array (
@@ -166,6 +167,10 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
+        ),
         'Doctrine\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/src',
@@ -228,6 +233,7 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         'Override' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/Override.php',
         'ReflectionConstant' => __DIR__ . '/..' . '/symfony/polyfill-php84/Resources/stubs/ReflectionConstant.php',
         'SQLite3Exception' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/SQLite3Exception.php',
+        'SimpleMail' => __DIR__ . '/..' . '/eoghanobrien/php-simple-mail/class.simple_mail.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
