@@ -16,16 +16,21 @@ class HomeController
 {
     private $templates;
     private $auth;
+    private $qb;
 
-    public function __construct()
+    public function __construct(QueryBuilder $qb, Engine $engine, Auth $auth)
     {
-        $this->templates = new Engine('../app/views');
-        $db = new PDO('mysql:host=localhost;dbname=app3;charset=utf8', 'root', '');
-        $this->auth = new Auth($db);
+        $this->qb = $qb;
+//        $this->templates = new Engine('../app/views');
+        $this->templates = $engine;
+//        $db = new PDO('mysql:host=localhost;dbname=app3;charset=utf8', 'root', '');
+        $this->auth = $auth;
     }
 
-    public function index($vars)
+    public function index()
     {
+        d($this->auth);die;
+//        d($this->qb);die;
 //        $this->auth->login('myrat@gmail.com', '123');
 //        die;
 //        d($this->auth->getRoles());
